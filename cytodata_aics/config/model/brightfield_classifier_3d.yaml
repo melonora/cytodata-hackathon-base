@@ -13,6 +13,7 @@ _aux_:
         kernel_size: *max_pool_kernel_size
       - _target_: torch.nn.LeakyReLU
       - _target_: torch.nn.LazyBatchNorm3d
+      - _target_: torch.nn.Dropout
 
 _target_: serotiny.models.BasicModel
 x_label: image
