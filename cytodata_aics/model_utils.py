@@ -17,3 +17,30 @@ def save_predictions_classifier(preds, output_dir):
     pd.concat(records).reset_index().drop(columns="index").to_csv(
         Path(output_dir) / "model_predictions.csv", index_label=False
     )
+
+def save_predictions_cell_stage(preds, output_dir):
+    """
+    TODO: get 5 class predictions, need max from probability outputs
+    """
+    records = []
+    for pred in preds:
+        record = dict()
+        for col in ["id", "y", "yhat"]:
+            record[col] = pred[col].argmax()
+        record["loss"] = [pred["loss"].item()] * len(pred["id"])
+        records.append(pd.DataFrame(record))
+    
+    pd.concat(records).reset_index().drop(columns="index").to_csv(
+        Path(output_dir) / "model_predictions.csv", index_label=False
+    )
+    
+    """
+    for pred in preds:
+        record = dict()
+        for col in ["id", "y"]:
+            record[col] = pred[col].squeeze().numpy()
+        for col in ["yhat"]:
+            record[col] = (pred[col].squeeze().numpy().argmax()
+        record["loss"] = [pred["loss"].item()] * len(pred["id"])
+        records.append(pd.DataFrame(record))
+    """
