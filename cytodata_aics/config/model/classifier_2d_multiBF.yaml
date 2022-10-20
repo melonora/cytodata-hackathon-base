@@ -23,9 +23,12 @@ network:
     - *conv_block
     - *conv_block
     - *conv_block
+    - *conv_block
+    - *conv_block
     - _target_: serotiny.networks.layers.Flatten
     - _target_: torch.nn.LazyLinear
       out_features: 5
+    - _target_: torch.nn.Softmax
 loss:
   _target_: torch.nn.CrossEntropyLoss
 # a function used by `serotiny predict` to store the results of feeding data through the model
