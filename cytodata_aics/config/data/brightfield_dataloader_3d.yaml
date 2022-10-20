@@ -1,6 +1,6 @@
 _target_: serotiny.datamodules.ManifestDatamodule
 
-path: /home/aicsuser/serotiny_data/keith_mitocells.csv
+path: /home/aicsuser/serotiny_data/keith_mitocells_balanced.csv
 
 batch_size: 64
 num_workers: 6

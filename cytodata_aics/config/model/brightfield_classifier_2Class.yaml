@@ -25,7 +25,7 @@ network:
     - *conv_block
     - _target_: serotiny.networks.layers.Flatten
     - _target_: torch.nn.LazyLinear
-      out_features: 5
+      out_features: 2
     
 loss:
   _target_: torch.nn.CrossEntropyLoss
