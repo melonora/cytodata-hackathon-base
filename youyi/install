@@ -1,0 +1,23 @@
+pip install --no-cache-dir vtk==9.2.0rc2 git+https://github.com/AllenCellModeling/aicsimageprocessing@d6f7f42005fe4598a531821ee77f2eba5e369301 "plotly>=4.14.3" "ipywidgets>=7.5" nbvv==1.3.2 jupyter_contrib_nbextensions    jupyter_nbextensions_configurator rise    jupyter-dash jupyter-server-proxy
+
+
+python -m ipykernel install --user --name=cytodataenv
+
+
+
+jupyter labextension install --no-build     jupyterlab-plotly     @jupyter-widgets/jupyterlab-manager     plotlywidget
+
+conda install -c conda-forge nodejs
+
+jupyter lab clean && jupyter lab build 
+
+
+
+make sure this is on top of notebook
+
+import os
+os.chdir('D:\\\\DeepLearning\\\\cytodata-hackathon-base') # this needs to be at the root of repo
+os.environ["FSSPEC_CONFIG_DIR"] = \"D:\\DeepLearning\\cytodata-hackathon-base\\youyi\"
+
+make sure config.json exists as well
+ 
