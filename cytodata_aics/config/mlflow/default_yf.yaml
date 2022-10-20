@@ -1,0 +1,11 @@
+defaults:
+  - /defaults/mlflow/default@_here_
+  
+tracking_uri: http://mlflow.cytodata.allencell.org
+experiment_name: chapter_5_example
+run_name:
+#autolog:
+  #log_every_n_epoch:
+  #log_models:
+  ## see more options here:
+  ## https://www.mlflow.org/docs/latest/python_api/mlflow.pytorch.html#mlflow.pytorch.autolog
